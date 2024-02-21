@@ -1,0 +1,42 @@
+﻿@model ProjetoVendas2.Models.VendaHasProduto
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="info">
+    <h1>Excluir</h1>
+
+    <h3>Tem certeza que deseja excluir isso?</h3>
+    <div>
+        <h4>Controle de vendas</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Venda)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Venda.Id)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Produto)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Produto.Id)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.VendaHasQuantidade)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.VendaHasQuantidade)
+            </dd>
+        </dl>
+
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <input type="submit" value="Excluir" class="btn btn-danger" /> |
+            <a asp-action="Index">Voltar</a>
+        </form>
+    </div>
+</div>
+

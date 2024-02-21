@@ -1,0 +1,78 @@
+﻿@model ProjetoVendas2.Models.Venda
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="info">
+    <h1>Detalhes</h1>
+
+    <div>
+        <h4>Venda</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.VendaValorTotal)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.VendaValorTotal)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.VendaData)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.VendaData)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Cliente)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Cliente.ClienteNome)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Vendedor)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Vendedor.VendedorNome)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Pagamento)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Pagamento.PagamentoForma)
+            </dd>
+        </dl>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    <h3>Produtos da Venda</h3>
+                </th>
+                <th>
+                    <h3>Quantidade</h3>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.ProdutosList)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Produto.ProdutoNome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Produto.ProdutoQuantidade)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <br />
+    <br />
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model?.Id">Editar</a> |
+        <a asp-action="Index">Voltar</a>
+    </div>
+
+</div>

@@ -1,0 +1,39 @@
+﻿@model ProjetoVendas2.Models.VendaHasProduto
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="info">
+    <h1>Detalhes</h1>
+
+    <div>
+        <h4>Controle de vendas</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Venda)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Venda.Id)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Produto)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Produto.Id)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.VendaHasQuantidade)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.VendaHasQuantidade)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model?.Id">Editar</a> |
+        <a asp-action="Index">Voltar</a>
+    </div>
+
+</div>
